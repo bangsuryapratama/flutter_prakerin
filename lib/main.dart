@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:my_app/latrowcol/lat1.dart';
+import 'package:my_app/row_column/lat1.dart';
+import 'package:my_app/row_column/lat2.dart';
+import 'package:my_app/row_column/lat3.dart';
 import 'package:my_app/row_column/row1.dart';
 import 'package:my_app/row_column/column1.dart';
 import 'package:my_app/row_column/rowcolumn.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 3, 24, 61),
         ),
-        body: LatRowCol(),
+        body: Latihan3(),
       ),
       
 
