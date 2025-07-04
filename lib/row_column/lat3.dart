@@ -5,81 +5,134 @@ class Latihan3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          const Text(
-            'Dokumentasi Martabak',
-            style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 117, 115, 115)),
-          ),
-          const SizedBox(height: 0),
-          const Text(
-            'Martabak Enak',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-              color: Colors.orangeAccent,
-              height: 1.2,
-            ),
-          ),
-          const SizedBox(height: 24),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              image: const DecorationImage(
-                image: NetworkImage('https://www.shutterstock.com/image-photo/martabak-manis-keju-cokelat-indonesian-260nw-515280337.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            height: 200,
-            width: double.infinity,
-          ),
-
-          const SizedBox(height: 16),
-          Row(
+    return Scaffold(
+      backgroundColor: const Color(0xFFF2F2F2),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    image: const DecorationImage(
-                      image: NetworkImage('https://postimg.cc/3WhXX6dB'),
-                      fit: BoxFit.cover,
+              // Header teks kecil dan besar
+              const Text(
+                'Martabak enak dan lezat',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
+              ),
+              const SizedBox(height: 4),
+              const Text(
+                'Dokumentasi Martabak',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.orangeAccent,
+                ),
+              ),
+              const SizedBox(height: 24),
+
+              // GAMBAR ATAS (1)
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 6,
+                      offset: Offset(0, 4),
                     ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/1/11/Martabak_manis.jpg',
+                    height: 180,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(
-                  margin: const EdgeInsets.only(left: 8),
-                  height: 120,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    image: const DecorationImage(
-                      image: NetworkImage('https://www.jagel.id/api/listimage/v/Martabak-Coklat-Susu-0-98261ee97595ae3e.jpg'),
-                      fit: BoxFit.cover,
+              const SizedBox(height: 16),
+
+              // GAMBAR TENGAH (2 sejajar)
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 6,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.network(
+                          'https://i.ibb.co/0D0RRMk/dok2.jpg',
+                          height: 140,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 6,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.network(
+                          'https://i.ibb.co/0D0RRMk/dok2.jpg',
+                          height: 140,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+
+              // GAMBAR BAWAH (1)
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 6,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.network(
+                    'https://i.ibb.co/2Fd7B6g/dok3.jpg',
+                    height: 180,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
             ],
           ),
-
-          const SizedBox(height: 16),
-
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              image: const DecorationImage(
-                image: NetworkImage('https://www.jagel.id/api/listimage/v/Martabak-Coklat-Susu-0-98261ee97595ae3e.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            height: 200,
-            width: double.infinity,
-          ),
-        ],
+        ),
       ),
     );
   }
